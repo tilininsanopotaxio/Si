@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+}
+#barra ul{
+    list-style: none;
+    text-align: center;
+}
+#barra li {
+    display: inline;
+    text-align: center;
+    margin: 20px;
+}
+#barra li a {
+    color: #fdf9c4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+#barra li a:hover{
+    color: #ffda9e;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    /*background-color: #c5c6c8;*/
+    background: #c5c6c8;
+}
+
+input {
+    width: 217px;
+    height: 25px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.container .card {
+    width: 330px;
+    height: 650px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.container .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+.container .card img {
+    width: 360px;
+    height: auto;
+
+}
+
+.container .card h3 {
+    font-weight: 600;
+}
+
+.container .card p {
+    padding: 0 1rem;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.container .card button{
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+}
+
+button {
+    width: 225px;
+    height: 25px;
+    margin-top: 15px;
+}
+
+.total {
+    margin-top: 15px;
+}
+h1{
+    font-family: "Noto Sans", sans-serif;
+    margin-top: -10px;
+    font-size: 50px;
+}
+.imgl{
+    display: flex;
+    height: 500px;
+    width: auto;
+    justify-content: center;
+}
+.go-top-container{
+    position: fixed;
+    bottom: 0rem;
+    right: 1rem;
+    width: 6.6rem;
+    height: 6.6rem;
+    z-index: -1;
+}
+.go-top-button{
+    width: 0rem;
+    height: 0rem;
+    background: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.go-top-button i{
+    position: absolute;
+    font-size: 2rem;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #fff;
+    transition: .2s;
+}
+.show{
+    z-index: 10;
+}
+.show .go-top-button{
+    animation: popup .3s ease-in-out;
+    width: 3.3rem;
+    height: 3.3rem;
+    z-index: 11;
+}
+.show i{
+    transform: translate(-50%, -50%) scale(1);
+}
+@keyframes popup{
+    0%{
+        width: 0rem;
+        height: 0rem;
+    }
+    50%{
+        width: 4rem;
+        height: 4rem;
+    }
+    100%{
+        width: 3.3rem;
+        height: 3.3rem;
+    }
+}
+@media (max-width:700px){ /*esto se usa para que apartir de 700px se convierta en columna, para poder usarlo en celular o un dispositivo con esa cantidad de piexeles*/
+    head{
+        flex-direction: column;
+        height: 100px;
+        width: auto;
+    }
+    .card{
+        flex-direction: column;
+        height: 100px;
+        width: auto;
+    }
+
+    ul{
+        padding: 10px 0px;
+    }
+    .imgl{
+        height: 150px;
+        width: auto;
+    }
+    @keyframes popup{
+        100%{
+        width: 1rem;
+        height: 1rem;
+        }
+    }
+}
